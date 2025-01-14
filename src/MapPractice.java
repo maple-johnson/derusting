@@ -1,28 +1,56 @@
+import java.util.HashMap;
+import java.util.Map;
 
-
-public class MapPractice {
-  public static void main(String[] args) {
+public class MapPractice 
+{
+  public static void main(String[] args) 
+  {
     // Create a HashMap with String keys and Integer values and
     // assign it to a variable of type Map
+    Map<String, Integer> mapPractice = new HashMap<String, Integer>();
+    System.out.println(mapPractice);
 
     // Put 3 different key/value pairs in the Map
     // (it's OK to do this one-by-one)
+    mapPractice.put("Java", 27);
+    mapPractice.put("C", 11);
+    mapPractice.put("Python", 120);
+
+    System.out.println(mapPractice);
 
     // Get the value associated with a given key in the Map
+    System.out.println(mapPractice.get("C"));
 
     // Find the size (number of key/value pairs) of the Map
+    System.out.println(mapPractice.size());
 
     // Replace the value associated with a given key (the size of the Map shoukld not change)
+    mapPractice.put("Python", 2);
+    System.out.println(mapPractice);
 
     // Check whether the Map contains a given key
+    System.out.println(mapPractice.containsKey("Java"));
 
     // Check whether the Map contains a given value
+    System.out.println(mapPractice.containsValue(27));
 
     // Iterate over the keys of the Map, printing each key
+    for (String keys : mapPractice.keySet()) 
+    {
+          System.out.println(keys);
+    }
 
     // Iterate over the values of the map, printing each value
+    for (int values : mapPractice.values()) 
+    {
+          System.out.println(values);
+    }
 
     // Iterate over the entries in the map, printing each key and value
+    for (String keys : mapPractice.keySet()) 
+    {
+          System.out.println(keys + " and " + mapPractice.get(keys));
+    }
 
     /*
      * Usage tip!
@@ -40,4 +68,5 @@ public class MapPractice {
      * and you don't care about any ordering.
      */
   }
+
 }
