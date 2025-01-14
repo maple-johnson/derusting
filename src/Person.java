@@ -3,16 +3,29 @@
  * the Person class.
  */
 
-public class Person {
+public class Person 
+{
   // Declare a public String instance variable for the name of the person
   // Declare a private int instance variable for the age of the person
+  public String name;
+  private int age;
 
 
   // Create a constructor that takes the name and age of the person
   // and assigns it to the instance variables
+  public Person(String name, int age)
+  {
+     this.name = name;
+     this.age  = age;
+  }
 
 
   // Create a toString method that gives the name and age of the person
+  @Override
+  public String toString() 
+  {
+     return name + ": " + age;
+  }
 
 
   // Implement the below public instance method "birthYear"
@@ -29,24 +42,39 @@ public class Person {
    */
   // (create the instance method here)
 
+  public int birthyear(int currentYear)
+  {
+     return currentYear - age;
+  }
 
-  public static void main(String[] args) {
+
+  public static void main(String[] args) 
+  {
     // Create an instance of Person
+    Person personOne = new Person("Clair", 32);
 
     // Create another instance of Person with a different name and age and
     // assign it to a different variable
+    Person personTwo = new Person("Jill", 35);
 
     // Print the first person
+    System.out.println(personOne.toString());
 
     // Print the second person
+    System.out.println(personTwo.toString());
 
     // Get the name of the first person and store it in a local variable
+    String personName = personOne.name;
+    System.out.println(personName);
 
     // Using the birthYear method, get the birth year of the first person
     // and store it in a local variable. Input the actual current year (e.g. 2025)
     // as the argument.
+    int born = personOne.birthyear(2025);
+    System.out.println(born);
 
     // In a separate statement, print the local variable holding the birth year.
+    System.out.println(personOne.age);
 
     /**
      * Terminology!
@@ -63,4 +91,5 @@ public class Person {
      * Each instance has its own instance variables: Auberon's age can be different from Baya's age.
      */
   }
+
 }
